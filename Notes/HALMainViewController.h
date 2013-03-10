@@ -1,5 +1,5 @@
 //
-//  HALViewController.h
+//  HALMainViewController.h
 //  Notes
 //
 //  Created by Hanssen Li on 3/1/13.
@@ -8,6 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HALViewController : UIViewController
-
+@interface HALMainViewController : UITableViewController
 @end

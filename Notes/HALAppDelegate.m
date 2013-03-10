@@ -12,7 +12,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    UIColor* navBarColor = [UIColor colorWithWhite: 0.70 alpha:1];
+;
+    [[UINavigationBar appearance] setTintColor:navBarColor];
+    [[UINavigationBar appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIColor blackColor], UITextAttributeTextColor,
+      [UIFont fontWithName:@"Helvetica-Light" size:20.0], UITextAttributeFont,nil]];
     // Override point for customization after application launch.
+    
+    [[UIBarButtonItem appearance] setTintColor: [UIColor colorWithRed:172.0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0]];
+    
     return YES;
 }
 							

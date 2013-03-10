@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		500EBCB516E287FC00B4E728 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500EBCB416E287FC00B4E728 /* MapKit.framework */; };
+		500EBCB716E2881100B4E728 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500EBCB616E2881100B4E728 /* CoreLocation.framework */; };
 		50A684A916E13DA000A6E29C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A684A816E13DA000A6E29C /* UIKit.framework */; };
 		50A684AB16E13DA000A6E29C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A684AA16E13DA000A6E29C /* Foundation.framework */; };
 		50A684AD16E13DA000A6E29C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A684AC16E13DA000A6E29C /* CoreGraphics.framework */; };
@@ -17,10 +19,14 @@
 		50A684BD16E13DA000A6E29C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50A684BC16E13DA000A6E29C /* Default@2x.png */; };
 		50A684BF16E13DA000A6E29C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50A684BE16E13DA000A6E29C /* Default-568h@2x.png */; };
 		50A684C216E13DA000A6E29C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50A684C016E13DA000A6E29C /* MainStoryboard.storyboard */; };
-		50A684C516E13DA000A6E29C /* HALViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A684C416E13DA000A6E29C /* HALViewController.m */; };
+		50A684CD16E13EBC00A6E29C /* HALMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A684CC16E13EBC00A6E29C /* HALMainViewController.m */; };
+		50A684D016E13F0C00A6E29C /* HALDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A684CF16E13F0C00A6E29C /* HALDetailViewController.m */; };
+		50A684D316E1B9E800A6E29C /* HALNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A684D216E1B9E800A6E29C /* HALNewViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		500EBCB416E287FC00B4E728 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		500EBCB616E2881100B4E728 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		50A684A516E13DA000A6E29C /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A684A816E13DA000A6E29C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50A684AA16E13DA000A6E29C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -35,8 +41,12 @@
 		50A684BC16E13DA000A6E29C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		50A684BE16E13DA000A6E29C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		50A684C116E13DA000A6E29C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		50A684C316E13DA000A6E29C /* HALViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HALViewController.h; sourceTree = "<group>"; };
-		50A684C416E13DA000A6E29C /* HALViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HALViewController.m; sourceTree = "<group>"; };
+		50A684CB16E13EBC00A6E29C /* HALMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HALMainViewController.h; sourceTree = "<group>"; };
+		50A684CC16E13EBC00A6E29C /* HALMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HALMainViewController.m; sourceTree = "<group>"; };
+		50A684CE16E13F0C00A6E29C /* HALDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HALDetailViewController.h; sourceTree = "<group>"; };
+		50A684CF16E13F0C00A6E29C /* HALDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HALDetailViewController.m; sourceTree = "<group>"; };
+		50A684D116E1B9E800A6E29C /* HALNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HALNewViewController.h; sourceTree = "<group>"; };
+		50A684D216E1B9E800A6E29C /* HALNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HALNewViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				500EBCB716E2881100B4E728 /* CoreLocation.framework in Frameworks */,
+				500EBCB516E287FC00B4E728 /* MapKit.framework in Frameworks */,
 				50A684A916E13DA000A6E29C /* UIKit.framework in Frameworks */,
 				50A684AB16E13DA000A6E29C /* Foundation.framework in Frameworks */,
 				50A684AD16E13DA000A6E29C /* CoreGraphics.framework in Frameworks */,
@@ -56,6 +68,8 @@
 		50A6849C16E13DA000A6E29C = {
 			isa = PBXGroup;
 			children = (
+				500EBCB616E2881100B4E728 /* CoreLocation.framework */,
+				500EBCB416E287FC00B4E728 /* MapKit.framework */,
 				50A684AE16E13DA000A6E29C /* Notes */,
 				50A684A716E13DA000A6E29C /* Frameworks */,
 				50A684A616E13DA000A6E29C /* Products */,
@@ -86,8 +100,12 @@
 				50A684B716E13DA000A6E29C /* HALAppDelegate.h */,
 				50A684B816E13DA000A6E29C /* HALAppDelegate.m */,
 				50A684C016E13DA000A6E29C /* MainStoryboard.storyboard */,
-				50A684C316E13DA000A6E29C /* HALViewController.h */,
-				50A684C416E13DA000A6E29C /* HALViewController.m */,
+				50A684D116E1B9E800A6E29C /* HALNewViewController.h */,
+				50A684D216E1B9E800A6E29C /* HALNewViewController.m */,
+				50A684CE16E13F0C00A6E29C /* HALDetailViewController.h */,
+				50A684CF16E13F0C00A6E29C /* HALDetailViewController.m */,
+				50A684CB16E13EBC00A6E29C /* HALMainViewController.h */,
+				50A684CC16E13EBC00A6E29C /* HALMainViewController.m */,
 				50A684AF16E13DA000A6E29C /* Supporting Files */,
 			);
 			path = Notes;
@@ -176,7 +194,9 @@
 			files = (
 				50A684B516E13DA000A6E29C /* main.m in Sources */,
 				50A684B916E13DA000A6E29C /* HALAppDelegate.m in Sources */,
-				50A684C516E13DA000A6E29C /* HALViewController.m in Sources */,
+				50A684CD16E13EBC00A6E29C /* HALMainViewController.m in Sources */,
+				50A684D016E13F0C00A6E29C /* HALDetailViewController.m in Sources */,
+				50A684D316E1B9E800A6E29C /* HALNewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +319,7 @@
 				50A684CA16E13DA000A6E29C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
