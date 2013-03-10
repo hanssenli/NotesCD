@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		500EBCB516E287FC00B4E728 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500EBCB416E287FC00B4E728 /* MapKit.framework */; };
 		500EBCB716E2881100B4E728 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500EBCB616E2881100B4E728 /* CoreLocation.framework */; };
+		500EBCEB16EC4BC100B4E728 /* notepad-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 500EBCEA16EC4BC100B4E728 /* notepad-retina.png */; };
+		500EBCED16EC4C0500B4E728 /* notepad-reg.png in Resources */ = {isa = PBXBuildFile; fileRef = 500EBCEC16EC4C0500B4E728 /* notepad-reg.png */; };
 		50A684A916E13DA000A6E29C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A684A816E13DA000A6E29C /* UIKit.framework */; };
 		50A684AB16E13DA000A6E29C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A684AA16E13DA000A6E29C /* Foundation.framework */; };
 		50A684AD16E13DA000A6E29C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A684AC16E13DA000A6E29C /* CoreGraphics.framework */; };
@@ -27,6 +29,8 @@
 /* Begin PBXFileReference section */
 		500EBCB416E287FC00B4E728 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		500EBCB616E2881100B4E728 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		500EBCEA16EC4BC100B4E728 /* notepad-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notepad-retina.png"; sourceTree = "<group>"; };
+		500EBCEC16EC4C0500B4E728 /* notepad-reg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notepad-reg.png"; sourceTree = "<group>"; };
 		50A684A516E13DA000A6E29C /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A684A816E13DA000A6E29C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50A684AA16E13DA000A6E29C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -68,6 +72,8 @@
 		50A6849C16E13DA000A6E29C = {
 			isa = PBXGroup;
 			children = (
+				500EBCEC16EC4C0500B4E728 /* notepad-reg.png */,
+				500EBCEA16EC4BC100B4E728 /* notepad-retina.png */,
 				500EBCB616E2881100B4E728 /* CoreLocation.framework */,
 				500EBCB416E287FC00B4E728 /* MapKit.framework */,
 				50A684AE16E13DA000A6E29C /* Notes */,
@@ -182,6 +188,8 @@
 				50A684BD16E13DA000A6E29C /* Default@2x.png in Resources */,
 				50A684BF16E13DA000A6E29C /* Default-568h@2x.png in Resources */,
 				50A684C216E13DA000A6E29C /* MainStoryboard.storyboard in Resources */,
+				500EBCEB16EC4BC100B4E728 /* notepad-retina.png in Resources */,
+				500EBCED16EC4C0500B4E728 /* notepad-reg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
