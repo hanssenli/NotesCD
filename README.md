@@ -1,4 +1,4 @@
-Notes Application with CoreData
+NotesCD Application with CoreData
 ===============
 
 Some of the features are: 
@@ -9,8 +9,3 @@ Some of the features are:
 * retina and normal icons
 * ability to locate where the note was left
 =======
-NotesCD
-=======
-
-Notes with CoreData Persistent Storage
->>>>>>> db96352becf5af0241b34aefcc862614574cfe7a
