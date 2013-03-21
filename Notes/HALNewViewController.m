@@ -42,7 +42,7 @@
     }
     self.locationManager.delegate = self;
     [self.locationManager startUpdatingLocation];
-
+    
     
 }
 
@@ -63,9 +63,9 @@
 
 - (IBAction)saveNewNote:(id)sender {
     if (self.description != nil && self.title != nil) {
-    NSDictionary *note = @{@"title": self.title, @"description": self.description.text, @"location": self.locationManager.location};
-    // Post a notification
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"newNote" object:self userInfo:note];
+        NSDictionary *note = @{@"title": self.title, @"description": self.description.text, @"location": self.locationManager.location};
+        // Post a notification
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"newNote" object:self userInfo:note];
     }
     // Terminate location services
     [self.locationManager stopUpdatingLocation];

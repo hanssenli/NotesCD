@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5009E29E16FA126B007E3FD1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5009E29D16FA126B007E3FD1 /* CoreData.framework */; };
+		5009E2A116FA1629007E3FD1 /* NotesCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5009E29F16FA1629007E3FD1 /* NotesCD.xcdatamodeld */; };
+		5009E2E416FACAF5007E3FD1 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 5009E2E316FACAF5007E3FD1 /* Note.m */; };
 		500EBCB516E287FC00B4E728 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500EBCB416E287FC00B4E728 /* MapKit.framework */; };
 		500EBCB716E2881100B4E728 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500EBCB616E2881100B4E728 /* CoreLocation.framework */; };
 		500EBCEB16EC4BC100B4E728 /* notepad-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 500EBCEA16EC4BC100B4E728 /* notepad-retina.png */; };
@@ -27,6 +30,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5009E29D16FA126B007E3FD1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		5009E2A016FA1629007E3FD1 /* NotesCD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NotesCD.xcdatamodel; sourceTree = "<group>"; };
+		5009E2E216FACAF5007E3FD1 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		5009E2E316FACAF5007E3FD1 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		500EBCB416E287FC00B4E728 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		500EBCB616E2881100B4E728 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		500EBCEA16EC4BC100B4E728 /* notepad-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notepad-retina.png"; sourceTree = "<group>"; };
@@ -58,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5009E29E16FA126B007E3FD1 /* CoreData.framework in Frameworks */,
 				500EBCB716E2881100B4E728 /* CoreLocation.framework in Frameworks */,
 				500EBCB516E287FC00B4E728 /* MapKit.framework in Frameworks */,
 				50A684A916E13DA000A6E29C /* UIKit.framework in Frameworks */,
@@ -74,6 +82,7 @@
 			children = (
 				500EBCEC16EC4C0500B4E728 /* notepad-reg.png */,
 				500EBCEA16EC4BC100B4E728 /* notepad-retina.png */,
+				5009E29D16FA126B007E3FD1 /* CoreData.framework */,
 				500EBCB616E2881100B4E728 /* CoreLocation.framework */,
 				500EBCB416E287FC00B4E728 /* MapKit.framework */,
 				50A684AE16E13DA000A6E29C /* Notes */,
@@ -105,6 +114,9 @@
 			children = (
 				50A684B716E13DA000A6E29C /* HALAppDelegate.h */,
 				50A684B816E13DA000A6E29C /* HALAppDelegate.m */,
+				5009E2E216FACAF5007E3FD1 /* Note.h */,
+				5009E2E316FACAF5007E3FD1 /* Note.m */,
+				5009E29F16FA1629007E3FD1 /* NotesCD.xcdatamodeld */,
 				50A684C016E13DA000A6E29C /* MainStoryboard.storyboard */,
 				50A684D116E1B9E800A6E29C /* HALNewViewController.h */,
 				50A684D216E1B9E800A6E29C /* HALNewViewController.m */,
@@ -205,6 +217,8 @@
 				50A684CD16E13EBC00A6E29C /* HALMainViewController.m in Sources */,
 				50A684D016E13F0C00A6E29C /* HALDetailViewController.m in Sources */,
 				50A684D316E1B9E800A6E29C /* HALNewViewController.m in Sources */,
+				5009E2A116FA1629007E3FD1 /* NotesCD.xcdatamodeld in Sources */,
+				5009E2E416FACAF5007E3FD1 /* Note.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +344,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5009E29F16FA1629007E3FD1 /* NotesCD.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5009E2A016FA1629007E3FD1 /* NotesCD.xcdatamodel */,
+			);
+			currentVersion = 5009E2A016FA1629007E3FD1 /* NotesCD.xcdatamodel */;
+			path = NotesCD.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 50A6849D16E13DA000A6E29C /* Project object */;
 }

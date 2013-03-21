@@ -11,10 +11,12 @@
 
 @interface HALMainViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *mainTableView;
-@property (strong, nonatomic) NSMutableArray *tableData;
+@property (strong, nonatomic) NSArray *tableDataBuffer;
+
 @end
 
 @implementation HALMainViewController
+@synthesize managedObjectContext;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -29,6 +31,7 @@
 {
     [super viewDidLoad];
     self.tableData = [[NSMutableArray alloc] init];
+    [self reloadFromCoreData];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -49,12 +52,115 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)reloadFromCoreData
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Note" inManagedObjectContext: managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    self.tableDataBuffer = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    for (Note *note in self.tableDataBuffer) {
+        CLLocation *loc = [[CLLocation alloc] initWithLatitude:(double)[note.latitude doubleValue] longitude:(double)[note.longitude doubleValue]];
+        NSDictionary *eachNote = @{@"title": note.title, @"description": note.descrip, @"location": loc};
+        [self.tableData addObject:eachNote];
+    }
+    
+    [self.tableView reloadData];
+
+}
+
+
 - (void)addNewNote:(NSNotification *)note;
 {
     NSDictionary *input = [note userInfo];
+    
+    NSManagedObjectContext *context = [self managedObjectContext];
+    Note *newNote = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:context];
+    CLLocation *location = input[@"location"];
+    
+    newNote.title = input[@"title"];
+    newNote.descrip = input[@"description"];
+    
+    newNote.latitude = (NSDecimalNumber *)
+    [NSDecimalNumber numberWithDouble:location.coordinate.latitude];
+    newNote.latitude = (NSDecimalNumber *)
+                        [NSDecimalNumber numberWithDouble:location.coordinate.longitude];
+
+    NSError *error;
+    if (![context save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
+
+    
     [self.tableData addObject:input];
+    
     [self.mainTableView reloadData];
 }
+
+- (NSArray *)getAllNotes
+{
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Note" inManagedObjectContext:context];
+    
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc]
+                              initWithKey:@"title" ascending:YES];
+    [fetchRequest setSortDescriptors:@[sort]];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    
+    return fetchedObjects;
+}
+
+- (BOOL)deleteNote:(Note *)note
+{
+    NSManagedObjectContext *context = [self managedObjectContext];
+    [context deleteObject:note];
+    NSError *error;
+    if (![context save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        return NO;
+    }
+    return YES;
+}
+
+- (BOOL)deleteAllNotes
+{
+    NSArray *allNotes = [self getAllNotes];
+    for (Note *eachNote in allNotes) {
+        if (![self deleteNote:eachNote]) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
+- (void)refreshAllNotes
+{
+    NSManagedObjectContext *context = [self managedObjectContext];
+
+    for (NSDictionary *input in self.tableData) {
+        Note *newNote = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:context];
+        CLLocation *location = input[@"location"];
+        
+        newNote.title = input[@"title"];
+        newNote.descrip = input[@"description"];
+        
+        newNote.latitude = (NSDecimalNumber *)
+        [NSDecimalNumber numberWithDouble:location.coordinate.latitude];
+        newNote.latitude = (NSDecimalNumber *)
+        [NSDecimalNumber numberWithDouble:location.coordinate.longitude];
+        
+        NSError *error;
+        if (![context save:&error]) {
+            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        }
+    }
+}
+
 
 - (void)updateNote:(NSNotification *)note;
 {
@@ -63,6 +169,11 @@
     NSDictionary *replacedNote = @{@"title": input[@"title"], @"description": input[@"description"], @"location": input[@"location"]};
 
     [self.tableData replaceObjectAtIndex: [input[@"index"] integerValue] withObject:replacedNote];
+    
+    [self deleteAllNotes];
+    [self refreshAllNotes];
+    
+    
     [self.mainTableView reloadData];
 }
 
@@ -107,6 +218,9 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         [self.tableData removeObjectAtIndex:indexPath.row];
+        
+        [self deleteAllNotes];
+        [self refreshAllNotes];
 
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   

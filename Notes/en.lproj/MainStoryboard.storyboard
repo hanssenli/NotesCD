@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="hPE-sd-GTk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="hPE-sd-GTk">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -80,7 +80,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ry-zg-qky">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="345" id="i86-j5-p2o"/>
+                                    <constraint firstAttribute="height" constant="170" id="Lnb-D5-9oJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -93,7 +93,7 @@
                         <constraints>
                             <constraint firstItem="6Ry-zg-qky" firstAttribute="top" secondItem="qD4-Cg-cwY" secondAttribute="top" constant="66" id="ADG-NY-JRl"/>
                             <constraint firstItem="QBE-oq-MDl" firstAttribute="trailing" secondItem="6Ry-zg-qky" secondAttribute="trailing" type="default" id="ArB-0N-b15"/>
-                            <constraint firstItem="QBE-oq-MDl" firstAttribute="centerX" secondItem="qD4-Cg-cwY" secondAttribute="centerX" type="default" id="O9h-RX-gWk"/>
+                            <constraint firstItem="6Ry-zg-qky" firstAttribute="centerX" secondItem="qD4-Cg-cwY" secondAttribute="centerX" type="default" id="D6Z-Xm-MZe"/>
                             <constraint firstItem="QBE-oq-MDl" firstAttribute="top" secondItem="qD4-Cg-cwY" secondAttribute="top" constant="4" id="cQz-ge-mcD"/>
                             <constraint firstItem="QBE-oq-MDl" firstAttribute="leading" secondItem="6Ry-zg-qky" secondAttribute="leading" type="default" id="ouY-bH-qUC"/>
                         </constraints>
@@ -126,7 +126,7 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="OjS-3A-1AF">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="188" id="gkz-fx-UUF"/>
+                                    <constraint firstAttribute="height" constant="199" id="vHt-x6-FNn"/>
                                     <constraint firstAttribute="width" constant="317" id="xYo-J6-1yK"/>
                                 </constraints>
                                 <connections>
@@ -136,7 +136,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DtF-Bq-T1c">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="185" id="Mvv-U3-Iyp"/>
+                                    <constraint firstAttribute="height" constant="170" id="fpg-ms-mQk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -161,11 +161,11 @@
                         <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="SbN-yU-EnM" firstAttribute="trailing" secondItem="DtF-Bq-T1c" secondAttribute="trailing" type="default" id="MVb-WU-7HK"/>
-                            <constraint firstItem="OjS-3A-1AF" firstAttribute="top" secondItem="guz-2l-F70" secondAttribute="top" constant="241" id="NZp-dE-FZC"/>
                             <constraint firstItem="DtF-Bq-T1c" firstAttribute="top" secondItem="guz-2l-F70" secondAttribute="top" constant="57" id="TMn-t1-dG0"/>
+                            <constraint firstItem="DtF-Bq-T1c" firstAttribute="centerX" secondItem="guz-2l-F70" secondAttribute="centerX" type="default" id="URn-gw-KJX"/>
+                            <constraint firstItem="OjS-3A-1AF" firstAttribute="top" secondItem="guz-2l-F70" secondAttribute="top" constant="230" id="V3C-MB-myr"/>
                             <constraint firstItem="SbN-yU-EnM" firstAttribute="leading" secondItem="DtF-Bq-T1c" secondAttribute="leading" type="default" id="Vz0-Va-fo8"/>
                             <constraint firstItem="SbN-yU-EnM" firstAttribute="top" secondItem="guz-2l-F70" secondAttribute="top" type="default" id="jKM-LO-W7r"/>
-                            <constraint firstItem="DtF-Bq-T1c" firstAttribute="centerX" secondItem="guz-2l-F70" secondAttribute="centerX" type="default" id="tbQ-eH-3rW"/>
                             <constraint firstItem="OjS-3A-1AF" firstAttribute="centerX" secondItem="DtF-Bq-T1c" secondAttribute="centerX" type="default" id="vhe-8G-jwD"/>
                         </constraints>
                     </view>
@@ -197,6 +197,34 @@
             <point key="canvasLocation" x="-49" y="-57"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="HALDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HALDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="titleView" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="HALMainViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HALMainViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mainTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="mySearchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="HALNewViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HALNewViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="saveNewNote:"/>
+                <relationship kind="outlet" name="description" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="titleTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
